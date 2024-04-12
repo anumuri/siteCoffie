@@ -236,6 +236,7 @@ header nav ul li a:hover {
 .contact .contact-box .contact-image,
 .contact .contact-box .contact-body {
     height: 100%;
+    text-align: center;
 }
 
 .contact img {
@@ -317,3 +318,124 @@ form .form-content input:focus
     .contact-body h1 {
         font-size: 20px;        color: orange;
         padding: 10px;    }
+
+
+
+
+/* Скрываем основную навигацию при ширине экрана более 700px */
+.nav {
+    display: none;
+}
+
+/* Добавляем стили для бургер-меню */
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Обновляем стили навигации для скрытия при появлении бургер-меню */
+header nav {
+    display: flex;
+}
+
+/* Скрываем навигацию при определенной ширине экрана */
+@media screen and (max-width: 774px) {
+    .nav-wrapper {
+        display: none;
+    }
+    /* Показываем бургер-меню */
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 774px) {
+    header nav ul li a::before {
+        content: attr(data-text); /* Устанавливаем контент из атрибута data-text */
+        position: absolute;
+        top: -30px; /* Располагаем надписи над ссылками */
+        left: 0;
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+        opacity: 0; /* Скрываем надписи */
+        transition: opacity 0.3s ease-in-out; /* Добавляем плавный переход */
+    }
+
+    header nav ul li a:hover::before {
+        opacity: 1; /* Показываем надписи при наведении */
+    }
+}
+
+/* Обновляем стили для навигационных ссылок */
+header nav ul li a {
+    margin: 5px 20px;
+    font-size: 18px;
+    color: white;
+    padding: 10px 10px;
+}
+
+header nav ul li a:hover {
+    border-bottom: 2px solid white;
+}
+
+
+/* Добавляем стили для показа бургер-меню */
+.nav-wrapper {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+/* Показываем пункты меню в бургер-меню */
+.nav-wrapper.active {
+    display: block;
+}
+
+/* Стили для пунктов меню в бургер-меню */
+.nav-wrapper ul {
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Располагаем пункты меню в столбик */
+}
+
+.nav-wrapper ul li {
+    margin-bottom: 10px;
+}
+
+.nav-wrapper ul li a {
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+
+
+@media screen and (max-width: 775px) {
+    .nav-wrapper_menu {
+        display: none;
+    }
+}
+
+
+form{
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+
+}
+
+
+
+
+
+
